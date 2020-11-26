@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>  
+          
+        let isSaved = 0;     
+
+        window.addEventListener("load", init, false);
+        function init() {           
+            document.getElementById("btnSave").addEventListener("click", btnHandler, false);
+        }
+        function btnHandler(e){
+                console.log(e);
+                isSaved = 1;
+            };
+        
+        window.addEventListener("beforeunload", handler2,false);
+
+        function handler2(e) {
+            if (isSaved == 0) {
+            alert("Сохранить?");            
+            e.preventDefault();
+            e.returnValue = "";
+            }
+        }
+           
+    </script>
+</head>
+<body>
+    <!-- //Задание 1
+    /*Разработайте страницу «текстовый редактор». 
+    На странице должно быть размешено поле ввода и кнопка «Сохранить» 
+    (фактического сохранения данных из поля ввода делать не надо). 
+    Если пользователь пытается закрыть окно браузера не «сохранив» данные в поле ввода, 
+    должно запускаться окно, которое потребует подтверждения операции закрытия окна.*/ -->
+    <input type="text" id="inputText">
+    <button id="btnSave">Сохранить</button>
+
+</body>
+</html>

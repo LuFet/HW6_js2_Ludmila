@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea {
+            color:rgba(10, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Задание 2
+Создайте страницу с несколькими блоками текста. Реализуйте обработчики событий таким образом,
+чтобы при нажатии на кнопку r – текст становился красного цвета, кнопка g сделает цвет текста зеленым,
+а b – синим. -->
+<script>
+    document.addEventListener('keydown', keyFilter, false);
+    function keyFilter(e) {
+        let cats = document.getElementsByTagName("textarea");
+        if(e.keyCode==82)
+        {
+            for(let i=0;i<cats.length;i++)
+            cats[i].style.color = "red";
+        }
+        
+        else if(e.keyCode==71)
+        {
+            for(let i=0;i<cats.length;i++)
+            cats[i].style.color = "green";
+        }
+        else if(e.keyCode==66)
+        {
+            for(let i=0;i<cats.length;i++)
+            cats[i].style.color = "blue";
+        }
+        e.preventDefault();
+    };
+    
+
+</script>
+<textarea name="" id="text1" cols="30" rows="10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae reiciendis accusamus, tempora sapiente quibusdam ut suscipit tenetur, 
+    cumque incidunt natus dignissimos officia aliquam culpa amet est illo ratione ipsum aperiam.</textarea>
+<textarea name="" id="text2" cols="30" rows="10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae reiciendis accusamus, tempora sapiente quibusdam ut suscipit tenetur, 
+    cumque incidunt natus dignissimos officia aliquam culpa amet est illo ratione ipsum aperiam.</textarea>
+<textarea name="" id="text3" cols="30" rows="10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae reiciendis accusamus, tempora sapiente quibusdam ut suscipit tenetur, 
+    cumque incidunt natus dignissimos officia aliquam culpa amet est illo ratione ipsum aperiam.</textarea>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Задание 4
+Разработайте страницу, которая будет выводить сообщение «сохранено» при нажатии на клавиши Ctrl +
+S, «выбрано все» при нажатии на Ctrl + A и «сохранено все» при нажатии на комбинацию Ctrl + Shift + S. -->
+<script>
+
+    window.addEventListener("load", init, false);
+    function init() {
+    document.addEventListener("keydown", handler, false);
+}
+
+    function handler(e) {
+        let output = document.getElementById("output");
+   
+        let message = "";
+        if ( e.keyCode == 65 && e.ctrlKey) {
+            output = document.getElementById("output").innerHTML = "ВЫБРАНО ВСЁ";
+       }
+       if ( e.keyCode == 83 && e.ctrlKey && e.shiftKey) {
+            output += messagedocument.getElementById("output").innerHTML = "СОХРАНЕНО ВСЁ";
+       } 
+       else if ( e.keyCode == 83 && e.ctrlKey) {
+            output = document.getElementById("output").innerHTML = "СОХРАНЕНО";
+       }
+}
+</script>
+<p id="output"></p>
+</body>
+</html>

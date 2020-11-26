@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button{
+        width: 100px;
+        height: 50px;
+    }
+</style>
+<body>
+    <!-- Задание 3
+Сделайте кнопку с надписью «получить скидку». При наведение кнопка должна «убегать» от курсора не
+давая пользователю нажать себя. -->
+
+<script>
+    window.addEventListener("load", init, false);
+    function init(){
+        document.addEventListener("mouseover", handler, false);
+    }
+    function handler(){
+        let pressMe = document.getElementById("pressMe");
+        let clientpressMe = pressMe.getBoundingClientRect();
+        if(clientpressMe.x>800)
+            clientpressMe.x=0;
+        if(clientpressMe.y>600)
+            clientpressMe.y=0;
+        console.log(clientpressMe);
+        pressMe.style.position = "absolute";
+        pressMe.style.left = clientpressMe.left + 100 + "px";
+        pressMe.style.top = clientpressMe.top + 50 + "px";
+        
+    }    
+</script>
+<button id="pressMe">Получить скидку</button>
+</body>
+</html>
